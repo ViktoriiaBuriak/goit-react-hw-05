@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  gap: 20px;
+  background-color: #59517f7d;
+  border: 3px solid #e3dce2;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.active {
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  padding: 8px;
+}

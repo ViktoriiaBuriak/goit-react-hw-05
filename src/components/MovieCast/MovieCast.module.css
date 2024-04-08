@@ -1,0 +1,14 @@
+.castList {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.castTitle {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.castImg {
+  margin-bottom: 16px;
+}

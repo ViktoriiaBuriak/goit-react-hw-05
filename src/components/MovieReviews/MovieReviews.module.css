@@ -1,0 +1,15 @@
+.reviewsTitle {
+  margin-bottom: 14px;
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reviewsAuthor {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
