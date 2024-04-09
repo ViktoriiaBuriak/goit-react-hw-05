@@ -1,6 +1,6 @@
 import css from "./HomePage.module.css";
 import { useEffect, useState } from "react";
-import MoviesList from "../../components/MovieList/MovieList";
+import MovieList from "../../components/MovieList/MovieList";
 import { fetchPopularMovies } from "../../components/services/api";
 
 const HomePage = () => {
@@ -22,7 +22,7 @@ const HomePage = () => {
   return (
     <div>
       <h2 className={css.homeTitle}>Trending today</h2>
-      <MoviesList movies={trendingMovies} />
+      <MovieList movies={trendingMovies} />
     </div>
   );
 };
