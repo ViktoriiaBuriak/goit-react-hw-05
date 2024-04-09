@@ -6,7 +6,7 @@ const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
 const MoviesPage = lazy(() => import("../pages/MoviesPage/MoviesPage"));
 const MovieDetailsPage = lazy(() =>
-  import("../pages/MovieDetailPage/MovieDetailPage")
+  import("../pages/MovieDetailsPage/MovieDetailsPage")
 );
 import Loader from "./Loader/Loader";
 

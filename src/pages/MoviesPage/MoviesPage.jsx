@@ -2,7 +2,7 @@ import css from "./MoviesPage.module.css";
 import { useEffect, useState } from "react";
 
 import { fetchMovies } from "../../components/services/api";
-import MoviesList from "../../components/MoviesList/MoviesList";
+import MoviesList from "../../components/MovieList/MovieList";
 import { useSearchParams } from "react-router-dom";
 
 const MoviesPage = () => {

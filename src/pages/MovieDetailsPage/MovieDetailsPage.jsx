@@ -8,7 +8,7 @@ import {
 import MovieCast from "../../components/MovieCast/MovieCast";
 import MovieReviews from "../../components/MovieReviews/MovieReviews";
 import Loader from "../../components/Loader/Loader";
-import css from "./MovieDetailPage.module.css";
+import css from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
   const [movieDetails, setMovieDetails] = useState(null);
