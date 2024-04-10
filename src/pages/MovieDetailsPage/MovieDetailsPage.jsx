@@ -1,10 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useParams, Routes, Route, useLocation } from "react-router-dom";
-import {
-  fetchMovieCast,
-  fetchMovieReviews,
-  getMoviesById,
-} from "../../components/services/api";
+import { getMoviesById } from "../../components/services/api";
 import MovieCast from "../../components/MovieCast/MovieCast";
 import MovieReviews from "../../components/MovieReviews/MovieReviews";
 import Loader from "../../components/Loader/Loader";
@@ -12,24 +8,15 @@ import css from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
   const [movieDetails, setMovieDetails] = useState(null);
-  const [movieCast, setMovieCast] = useState([]);
-  const [movieReviews, setMovieReviews] = useState([]);
   const { movieId } = useParams();
   const location = useLocation();
-  const backLinkRef = useRef(location.state ?? "/");
+  const backLinkRef = useRef(location.state ?? "/movies");
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const [detailsResponse, castResponse, reviewsResponse] =
-          await Promise.all([
-            getMoviesById(movieId),
-            fetchMovieCast(movieId),
-            fetchMovieReviews(movieId),
-          ]);
+        const detailsResponse = await getMoviesById(movieId);
         setMovieDetails(detailsResponse);
-        setMovieCast(castResponse);
-        setMovieReviews(reviewsResponse);
       } catch (error) {
         console.log(error);
       }
@@ -66,11 +53,8 @@ const MovieDetailsPage = () => {
         <Link to="reviews">Reviews</Link>
       </div>
       <Routes>
-        <Route path="cast" element={<MovieCast cast={movieCast} />} />
-        <Route
-          path="reviews"
-          element={<MovieReviews reviews={movieReviews} />}
-        />
+        <Route path="cast" element={<MovieCast />} />
+        <Route path="reviews" element={<MovieReviews />} />
       </Routes>
     </div>
   );
